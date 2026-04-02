@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { SiFacebook, SiInstagram, SiPinterest, SiX } from "react-icons/si";
 
 const currentYear = new Date().getFullYear();
@@ -57,6 +58,23 @@ export function Footer() {
             >
               <SiPinterest size={20} />
             </a>
+          </div>
+
+          {/* Quick Links */}
+          <div className="flex items-center gap-6">
+            <Link
+              to="/faq"
+              className="text-sm opacity-60 hover:opacity-100 transition-opacity font-body tracking-wide uppercase"
+            >
+              FAQ
+            </Link>
+            <span className="opacity-30">·</span>
+            <Link
+              to="/support"
+              className="text-sm opacity-60 hover:opacity-100 transition-opacity font-body tracking-wide uppercase"
+            >
+              Customer Support
+            </Link>
           </div>
 
           {/* Divider */}

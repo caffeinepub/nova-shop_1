@@ -12,6 +12,8 @@ import { Navbar } from "./components/Navbar";
 import { CartProvider } from "./context/CartContext";
 import { AdminPage } from "./pages/AdminPage";
 import { CheckoutPage } from "./pages/CheckoutPage";
+import { CustomerSupportPage } from "./pages/CustomerSupportPage";
+import { FAQPage } from "./pages/FAQPage";
 import { HomePage } from "./pages/HomePage";
 import { OrdersPage } from "./pages/OrdersPage";
 
@@ -54,11 +56,25 @@ const checkoutRoute = createRoute({
   component: CheckoutPage,
 });
 
+const faqRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/faq",
+  component: FAQPage,
+});
+
+const supportRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/support",
+  component: CustomerSupportPage,
+});
+
 const routeTree = rootRoute.addChildren([
   homeRoute,
   ordersRoute,
   adminRoute,
   checkoutRoute,
+  faqRoute,
+  supportRoute,
 ]);
 
 const router = createRouter({
